@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-ragas"
+version = "0.1.0"
+description = "RAG evaluation example using Ragas"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ragas[all]>=0.3.0",
+    "openai>=1.0.0",
+    "python-dotenv>=1.2.1",
+    "ipykernel>=7.1.0",
+    "ipywidgets>=8.1.8",
+    "jupyterlab>=4.5.3",
+    "langchain>=1.2.7",
+    "langchain-community>=0.4.1",
+    "langchain-huggingface>=1.2.0",
+    "langchain-ollama>=1.0.1",
+    "langchain-openai>=1.1.7",
+    "langchain-qdrant>=1.1.0",
+    "numpy>=2.4.1",
+    "pydantic>=2.12.5",
+    "pandas>=2.0.0,<3.0.0",
+    "qdrant-client>=1.16.2",
+    "requests>=2.32.5",
+    "sentence-transformers>=5.2.0",
+    "langfuse>=3.12.0",
+    "langgraph>=1.0.6",
+    "llama-index>=0.14.13",
+    "llama-index-embeddings-ollama>=0.8.6",
+    "llama-index-llms-ollama>=0.9.1",
+    "python-dotenv>=1.2.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.uv]
+managed = true
+# Note: When developing locally, use:
+# uv sync --override ragas@path/to/ragas
+
+[tool.pytest.ini_options]
+markers = [
+    "evaluation: marks tests related to RAG evaluation with Ragas",
+]
